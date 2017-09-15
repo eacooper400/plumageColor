@@ -1,0 +1,11 @@
+; DO NOT EDIT (unless you know what you are doing)
+;
+; This subdirectory is a git "subrepo", and this file is maintained by the
+; git-subrepo command. See https://github.com/git-commands/git-subrepo#readme
+;
+[subrepo]
+	remote = https://github.com/eacooper400/GWAS_Pipelines.git
+	branch = master
+	commit = 34b9de3e577072fde3680f9a64ee7b42067e1b34
+	parent = c1c03615ec238e406050dd3dbe0087dd8cf0691e
+	cmdver = 0.3.1
