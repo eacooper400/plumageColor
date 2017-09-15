@@ -1,0 +1,158 @@
+\documentclass{article}
+
+\usepackage{pdflscape}
+
+\begin{document}
+
+\title{EcoRI/MseI Double Digest RAD Illumina Protocol}
+\author{Liz Cooper}
+\date{September 4, 2012}
+\maketitle
+
+\section{Prepare Stocks and Plates}\label{sec:prep}
+\emph{Allow yourself about half of a day to get everything prepared, so that the adapter mixes can be allowed to cool slowly with no rush.}
+
+\subsection{EcoRI Adapters}
+\begin{enumerate}
+	\item  Mix 1$\mu$L of each oligo in a pair (from 100$\mu$M stock) with 98$\mu$L water to make 100$\mu$L of 1pmol/$\mu$L (1$\mu$M) of double-stranded stock. (in a 96-well plate).	\item  Heat to 95$^{\circ}$C for 5 minutes and cool slowly to room temperature.\end{enumerate}
+	\subsection{MseI Adapters}
+\begin{enumerate}
+	\item	  Mix 10$\mu$L of each MseI oligo (from 100$\mu$M stock) with 80$\mu$L water to make 100$\mu$L of 10pmol/$\mu$L (10$\mu$M) stock (in a 500$\mu$L tube).
+	\item   Heat to 95$^{\circ}$C for 5 minutes and cool slowly to room temperature.\end{enumerate}
+	\subsection{PCR Primers}\begin{enumerate}
+	\item Mix 5 $\mu$L of each (Forward and Reverse) Illumina PCR oligo (from 100$\mu$M stock) with 90$\mu$L of water to make a working solution of 5$\mu$M (2.5$\mu$M each oligo).
+\end{enumerate}
+
+\subsection{DNA Plate}
+\begin{enumerate}
+	\item Prepare a 96-well plate with at least 6 $\mu$L of each DNA sample (at a concentration close to 20 ng/$\mu$L.)  \textbf{Adjust the concentrations to be as equal as possible before going on to the next step!}
+		
+		To ensure equal DNA concentrations \emph{and} clean DNA, I recommend the following:
+		\begin{itemize}
+			\item Measure your starting DNA concentrations (I recommend the Qubit), and calculate the total ng of DNA in each sample.
+			\item Perform Ethanol Purification to clean the samples (see separate protocol), and allow the DNA pellet to dry overnight.
+			\item Calculate the amount of water needed to elute the \emph{smallest} sample in a 20ng/$\mu$L solution.  If this amount is less than 6$\mu$L, calculate instead what the concentration of your smallest sample would be in 6$\mu$L.  If this concentration is below even 10ng/$\mu$L, you may need to exclude this sample.  Otherwise, you can proceed to the next step.
+			\item Calculate the volume of water needed to elute all of the rest of your samples to a concentration equal to that of your smallest sample, and elute your dried DNA pellet in PCR-grade water.
+			\item Re-check your concentrations on the Qubit, then proceed with add 6$\mu$L of each purified and re-concentrated sample to a new 96-well plate.
+	\end{itemize}
+\end{enumerate}
+
+\section{Restriction-Ligation Reactions}
+\begin{enumerate}
+	\item Place 6$\mu$L of sample DNA in each well of a new plate and keep on ice.	\item Prepare Master Mix I:
+	\begin{center}
+	\begin{tabular}{l|r|r}
+	\hline
+	& $\mu$L for 1 Sample & $\mu$L for 30 samples \\
+	\hline
+	10X T4 Ligation Buffer & 1 & 30 \\
+	1M NaCl	&	0.5	&	15 \\
+	1 mg/mL BSA	&	0.5	&	15	\\
+	MseI Adpater Mix	&	1	&	30\\
+	\hline
+	\end{tabular}
+	\end{center}
+	
+	\item Prepare Master Mix II:
+	\begin{center}
+	\begin{tabular}{l|r|r}
+	\hline
+	& $\mu$L for 1 Sample & $\mu$L for 30 samples \\
+	\hline
+	Water & 0.2825 & 8.475 \\
+	10X T4 Ligation Buffer	&	0.1	&	3 \\
+	1M NaCl	&	0.05	&	1.5\\
+	1 mg/mL BSA	&	0.05	&	1.5	\\
+	MseI enzyme	&	0.1	&	3\\
+	EcoRI enzyme	&	0.25	&	7.5\\
+	T4 DNA Ligase	&	0.1675	&	5.025	\\
+	\hline
+	\end{tabular}
+	\end{center}
+	
+	\item Combine Master Mix I and Master Mix II together; vortex and centrifuge.  Add 4$\mu$L of combined mix to each sample, keeping everything on ice.	\item Add 1$\mu$L of EcoRI Adapters to each well on the plate.	\item Total reaction volume should be 11$\mu$L.  Cover and seal the plate, vortex, centrifuge (for centrifuge, spin samples until centrifuge reaches max speed and then stop the spin), and incubate at 37$^{\circ}$C for 18 hours on a thermal cycler with a heated lid.  	\item Optional (but strongly recommended): Perform AMPure bead purification at this step to remove un-ligated adapters and dimers prior to PCR amplification.  Details of AMPure protocol are given below.	* \emph{To store the restriction-ligation reaction long-term (i.e. frozen), dilute with 189$\mu$L of 0.1X TE.} 
+
+\end{enumerate}
+
+\section{PCR Amplification}\begin{enumerate}	\item Take 2 aliquots of 4$\mu$L each from each Restriction-Ligation (R/L) reaction and put into separate PCR tubes or a new plate.	\item Prepare a PCR Master Mix:
+	\begin{center}
+	\begin{tabular}{l|r|r}
+	\hline
+	&	$\mu$L per Sample	&	$\mu$L for 60 samples\\
+	\hline	Water & 9.67 & 580.2 \\	5X iProof HF buffer & 4 & 240\\	dNTP Mix (10mM) & 0.4 & 24\\	$M_{g}Cl_{2}$ (50mM) & 0.4 & 24\\	Mixed PCR Primers (5$\mu$M) & 1.33 & 79.8\\
+	iProof Taq* & 0.2 & 12\\
+	\hline	&   16 $\mu$L Total & \\
+	\hline
+	\end{tabular}
+	*\emph{Using iProof because it is a high-fidelity polymerase.}
+	\end{center}	\item  Add 16$\mu$L of PCR Mix to each R/L aliquot, and place on a thermal cycler with the following conditions:
+	\begin{center}
+	\begin{tabular}{|rl|}
+	\hline	98$^{\circ}$C for 30 seconds & \\	30 cycles of: & \\	&	98$^{\circ}$C for 20s \\	&	56$^{\circ}$C for 30s \\	&	72$^{\circ}$C for 40s \\	Final extension: & 72$^{\circ}$C for 10 minutes\\
+	\hline	\end{tabular}
+	\end{center}\end{enumerate}	
+	
+\section{Gel Purification}\begin{enumerate}	\item Pool all PCR products (for a total volume of 960$\mu$L for 24 starting DNA samples).  Prepare a gel (1\% agarose) that can accommodate all of the DNA (probably about 40 wells in a single gel - two 20 lane combs = 40 total wells on big gel rig-you will probably need to run 2 big gels to get through all of the samples).  Add 20 $\mu$L of product per well with 4 $\mu$L of loading dye.  Add 2-5 $\mu$L of 100 bp ladder (from Promega) to the first and last wells of each row (the 4 extreme ends).	\item Run the PCR product on the gel for as long as needed (100 volts for 2-3 hours if doing 40 lanes in 1 gel), and be sure to include 100bp ladder in multiple locations.	\item Cut the desired region from the gel (between 300-500bp seems best) using a sterile pipette tip or razor blade.
+	\begin{itemize}		\item Use UV light and quickly score the gel so that you have cutting guidelines to use without having to leave the UV light on.		\item Weigh an empty microcentrifuge tube and zero the scale; cut gel chunk that is no bigger than 0.3 grams and re-weigh	\end{itemize}	\item  Purify the excised gel regions using the QiaQuick Gel Extraction Kit.
+	\begin{itemize}		\item	Add 300$\mu$L of QG buffer for every 0.1g of gel		\item Dissolve at room temp.  The protocol instructs you to dissolve at 50$^{\circ}C, but this may reduce quality of DNA fragments.  Instead, put in incubator and agitate ($\approx$183 speed) for ~$\approx$1 hour.  Check to make sure there are no gel clumps left when removing from agitator.		\item Add 100$\mu$L of Isopropanol per 0.1 g of gel.		\item Transfer mix from previous step to spin columns and spin at max speed (14,000 rpm) for 1 min.  Pour off liquid from spin.		\item Add 500 $\mu$L of QG buffer and spin at max again.  Pour off liquid.		\item Add 750 $\mu$L of buffer PE and let solution sit for 2-5 minutes after adding buffer PE.  Pour off liquid.		\item Spin column at max again to remove residual wash buffer. Pour off liquid.		\item Place column into labeled 1.5 mL microcentrifuge tube.  Add 20 $\mu$L of buffer EB and let stand for 1-4 minutes.  Spin column for 1 minute.  Keep contents of spin in labeled 1.5$\mu$L microcentrifuge tube.  
+	\end{itemize}
+\end{enumerate}
+
+\section{AMPure Purification}
+\begin{enumerate}	
+	\item Transfer purified products to PCR tubes.  You can combine reactions anytime after barcoded adapters have been added, but do not put more than 60$\mu$L into 1 tube, or you will not have enough room for the AMPure reagent.	\item Calculate the necessary amount of AMPure reagent (1.8x volume of  your sample volume in each tube).	\item AMPure reagent tends to separate, so be sure to vortex until thoroughly mixed.  When drawing up AMPure reagent, pipette up and down several times to confirm that it is mixed.	\item Add mixed AMPure reagent to PCR tube and pipette up and down about 10 times to mix DNA strands with AMPure beads.  Let this mixture sit for 5 minutes so that DNA can bind to beads.  	\item Transfer tubes onto the magnet plate.  Let the tubes sit for 2 minutes so that beads can move to side of the wells.  	\item Pipette off the cleared solution WITHOUT disturbing the ring of beads on the side.  Dispose of aspirated solution. (I prefer to use Gel Loading Pipet Tips for this, as the thin capillary sections fit more easily into the PCR tubes without disturbing the sides).	\item While the sample is still on the magnet, add 200 $\mu$L of 70\% Ethanol into each well and incubate for 30 seconds. Pipette off the Ethanol.	\item Repeat the previous step. Let samples dry for 2 minutes but NO longer as over-drying the beads will reduce the elution efficiency.	\item For final elution step, take the PCR tubes off of plate to facilitate mixing.  Use buffer EB instead of water. Pipette up and down $\approx$10 times or until the mixture appears homogeneous.  Place the tubes back onto the magnetic plate and let sit for 1 minute.  	\item Remove the liquid and transfer to a new PCR tube.  Do not include any beads in final solution so as to avoid damaging the sequencing machine.\end{enumerate}
+
+\pagestyle{empty}
+\begin{landscape}
+\section{EcoRI Adapter Sequences with Barcodes}
+\begin{table}[h!]
+\tiny
+\begin{tabular}{|l|l|}
+\hline
+P1-FOR-AAAAA & AATGATACGGCGACCACCGAGATCTACACTCTTTCCCTACACGACGCTCTTCCGATCTAAAA*A \\
+P1-REV-AAAAA & /5Phos/AATTTTTTTAGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGTAGATCTCGGTGGTCGCCGTATCAT*T\\ \hlineP1-FOR-AACCC &	AATGATACGGCGACCACCGAGATCTACACTCTTTCCCTACACGACGCTCTTCCGATCTAACC*C \\
+P1-REV-AACCC & /5Phos/AATTGGGTTAGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGTAGATCTCGGTGGTCGCCGTATCAT*T\\ \hlineP1-FOR-AAGGG	&	AATGATACGGCGACCACCGAGATCTACACTCTTTCCCTACACGACGCTCTTCCGATCTAAGG*G	\\
+P1-REV-AAGGG	&	/5Phos/AATTCCCTTAGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGTAGATCTCGGTGGTCGCCGTATCAT*T\\ \hlineP1-FOR-AATTT	&	AATGATACGGCGACCACCGAGATCTACACTCTTTCCCTACACGACGCTCTTCCGATCTAATT*T\\	
+P1-REV-AATTT		&	/5Phos/AATTAAATTAGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGTAGATCTCGGTGGTCGCCGTATCAT*T\\ \hlineP1-FOR-ACACG	&	AATGATACGGCGACCACCGAGATCTACACTCTTTCCCTACACGACGCTCTTCCGATCTACAC*G	\\
+P1-REV-ACACG	&	/5Phos/AATTCGTGTAGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGTAGATCTCGGTGGTCGCCGTATCAT*T\\ \hlineP1-FOR-ACCAT	&	AATGATACGGCGACCACCGAGATCTACACTCTTTCCCTACACGACGCTCTTCCGATCTACCA*T	\\
+P1-REV-ACCAT	&	/5Phos/AATTATGGTAGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGTAGATCTCGGTGGTCGCCGTATCAT*T\\ \hlineP1-FOR-ACGTA	&	AATGATACGGCGACCACCGAGATCTACACTCTTTCCCTACACGACGCTCTTCCGATCTACGT*A	\\
+P1-REV-ACGTA	&	/5Phos/AATTTACGTAGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGTAGATCTCGGTGGTCGCCGTATCAT*T\\ \hlineP1-FOR-ACTGC	&	AATGATACGGCGACCACCGAGATCTACACTCTTTCCCTACACGACGCTCTTCCGATCTACTG*C\\	
+P1-REV-ACTGC	&	/5Phos/AATTGCAGTAGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGTAGATCTCGGTGGTCGCCGTATCAT*T\\ \hlineP1-FOR-AGAGT	&	AATGATACGGCGACCACCGAGATCTACACTCTTTCCCTACACGACGCTCTTCCGATCTAGAG*T	\\
+P1-REV-AGAGT	&	/5Phos/AATTACTCTAGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGTAGATCTCGGTGGTCGCCGTATCAT*T\\ \hlineP1-FOR-AGCTG	&	AATGATACGGCGACCACCGAGATCTACACTCTTTCCCTACACGACGCTCTTCCGATCTAGCT*G	\\
+P1-REV-AGCTG	&	/5Phos/AATTCAGCTAGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGTAGATCTCGGTGGTCGCCGTATCAT*T\\ \hlineP1-FOR-AGGAC	&	AATGATACGGCGACCACCGAGATCTACACTCTTTCCCTACACGACGCTCTTCCGATCTAGGA*C	\\
+P1-REV-AGGAC	&	/5Phos/AATTGTCCTAGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGTAGATCTCGGTGGTCGCCGTATCAT*T\\ \hlineP1-FOR-AGTCA	&	AATGATACGGCGACCACCGAGATCTACACTCTTTCCCTACACGACGCTCTTCCGATCTAGTC*A	\\
+P1-REV-AGTCA	&	/5Phos/AATTTGACTAGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGTAGATCTCGGTGGTCGCCGTATCAT*T\\ \hlineP1-FOR-ATATC	&	AATGATACGGCGACCACCGAGATCTACACTCTTTCCCTACACGACGCTCTTCCGATCTATAT*C	\\
+P1-REV-ATATC		&	/5Phos/AATTGATATAGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGTAGATCTCGGTGGTCGCCGTATCAT*T\\ \hlineP1-FOR-ATCGA	&	AATGATACGGCGACCACCGAGATCTACACTCTTTCCCTACACGACGCTCTTCCGATCTATCG*A	\\
+P1-REV-ATCGA	&	/5Phos/AATTTCGATAGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGTAGATCTCGGTGGTCGCCGTATCAT*T\\ \hlineP1-FOR-ATGCT	&	AATGATACGGCGACCACCGAGATCTACACTCTTTCCCTACACGACGCTCTTCCGATCTATGC*T	\\
+P1-REV-ATGCT	&	/5Phos/AATTAGCATAGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGTAGATCTCGGTGGTCGCCGTATCAT*T\\ \hlineP1-FOR-ATTAG	&	AATGATACGGCGACCACCGAGATCTACACTCTTTCCCTACACGACGCTCTTCCGATCTATTA*G	\\
+P1-REV-ATTAG	&	/5Phos/AATTCTAATAGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGTAGATCTCGGTGGTCGCCGTATCAT*T\\ \hlineP1-FOR-CAACT	&	AATGATACGGCGACCACCGAGATCTACACTCTTTCCCTACACGACGCTCTTCCGATCTCAAC*T	\\
+P1-REV-CAACT	&	/5Phos/AATTAGTTGAGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGTAGATCTCGGTGGTCGCCGTATCAT*T\\ \hlineP1-FOR-CACAG	&	AATGATACGGCGACCACCGAGATCTACACTCTTTCCCTACACGACGCTCTTCCGATCTCACA*G	\\
+P1-REV-CACAG	&	/5Phos/AATTCTGTGAGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGTAGATCTCGGTGGTCGCCGTATCAT*T\\ \hlineP1-FOR-CAGTC	&	AATGATACGGCGACCACCGAGATCTACACTCTTTCCCTACACGACGCTCTTCCGATCTCAGT*C	\\
+P1-REV-CAGTC	&	/5Phos/AATTGACTGAGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGTAGATCTCGGTGGTCGCCGTATCAT*T\\ \hlineP1-FOR-CATGA	&	AATGATACGGCGACCACCGAGATCTACACTCTTTCCCTACACGACGCTCTTCCGATCTCATG*A	\\
+P1-REV-CATGA	&	/5Phos/AATTTCATGAGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGTAGATCTCGGTGGTCGCCGTATCAT*T\\ \hlineP1-FOR-CCAAC	&	AATGATACGGCGACCACCGAGATCTACACTCTTTCCCTACACGACGCTCTTCCGATCTCCAA*C	\\
+P1-REV-CCAAC	&	/5Phos/AATTGTTGGAGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGTAGATCTCGGTGGTCGCCGTATCAT*T\\ \hlineP1-FOR-CCCCA	&	ATGATACGGCGACCACCGAGATCTACACTCTTTCCCTACACGACGCTCTTCCGATCTCCCC*A	\\
+P1-REV-CCCCA	&	/5Phos/AATTTGGGGAGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGTAGATCTCGGTGGTCGCCGTATCAT*T\\ \hlineP1-FOR-CCGGT	&	AATGATACGGCGACCACCGAGATCTACACTCTTTCCCTACACGACGCTCTTCCGATCTCCGG*T	\\
+P1-REV-CCGGT	&	/5Phos/AATTACCGGAGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGTAGATCTCGGTGGTCGCCGTATCAT*T\\ \hlineP1-FOR-CCTTG	&	AATGATACGGCGACCACCGAGATCTACACTCTTTCCCTACACGACGCTCTTCCGATCTCCTT*G	\\
+P1-REV-CCTTG	&	/5Phos/AATTCAAGGAGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGTAGATCTCGGTGGTCGCCGTATCAT*T\\ \hline
+\end{tabular}
+\end{table} 
+
+\section{MseI Adapters (not Barcoded)}
+\begin{table}[h!]
+\begin{tabular}{|l|l|}
+\hline
+MseI\_P2.1\_PE	&	GTGACTGGAGTTCAGACGTGTGCTCTTCCGATCT	\\MseI\_P2.2\_PE	&	CAAGCAGAAGACGGCATACGAGATGTGACTGGAGTTCAGACGTGTGC \\
+\hline
+\end{tabular}
+\end{table}
+
+\section{PCR Primers}
+\begin{table}[h!]
+\begin{tabular}{|l|l|}
+\hline
+RAD-FORWARD	&	AATGATACGGCGACCACCG*A \\RAD-REVERSE	&	CAAGCAGAAGACGGCATACGAGATGTGACTGGAGTTCAGACGTGTGC\\	\hline
+\end{tabular}
+\end{table}
+\end{landscape}
+	
+\end{document}
